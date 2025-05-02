@@ -42,7 +42,7 @@ func main() {
 		panic(err)
 	}
 
-	var running chan struct{}
+	running := make(chan struct{})
 
 	go func() {
 		for msg := range msgs {
@@ -52,5 +52,4 @@ func main() {
 
 	log.Printf(" [*] Waiting for messages. To exit press CTRL+C")
 	<-running
-
 }

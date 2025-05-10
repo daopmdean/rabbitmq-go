@@ -34,7 +34,7 @@ func main() {
 	msgs, err := ch.Consume(
 		q.Name, // queue
 		"",     // consumer
-		true,   // auto-ack
+		false,  // auto-ack
 		false,  // exclusive
 		false,  // no-local
 		false,  // no-wait
@@ -53,6 +53,7 @@ func main() {
 			t := time.Duration(dots)
 			time.Sleep(t * time.Second)
 			log.Printf("Process message done.: %s", msg.MessageId)
+			msg.Ack(false)
 		}
 	}()
 

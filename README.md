@@ -20,4 +20,14 @@ go run cmd/hello/send/main.go
 
 ## Running work queue example
 
+Run new task
+```
+go run cmd/workqueue/newtask/main.go message content one .....
+go run cmd/workqueue/newtask/main.go message content two .......
+go run cmd/workqueue/newtask/main.go message content three ......
+```
 
+Run worker
+```
+go run cmd/workqueue/worker/main.go
+```

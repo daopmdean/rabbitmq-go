@@ -31,3 +31,17 @@ Run worker
 ```
 go run cmd/workqueue/worker/main.go
 ```
+
+## Running pub/sub example
+
+```
+go run cmd/pubsub/receive_logs/main.go &> logs_from_rabbit.log
+```
+
+```
+go run cmd/pubsub/receive_logs/main.go
+```
+
+```
+go run cmd/pubsub/emit_log/main.go
+```
